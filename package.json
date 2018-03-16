@@ -32,14 +32,7 @@
       "@types/request": "^2.47.0",
       "@types/superagent": "^3.5.7",
       "@types/supertest": "^2.0.4",
-      "@types/uuid": "^3.4.3",
-      "gts": "^0.5.4",
-      "jest": "^22.4.2",
-      "nodemon": "^1.17.1",
-      "supertest": "^3.0.0",
-      "ts-jest": "^22.4.1",
-      "ts-node": "3.3.0",
-      "tslint": "^5.9.1"
+      "@types/uuid": "^3.4.3"
    },
    "dependencies": {
       "@types/es6-shim": "^0.31.36",
@@ -60,6 +53,13 @@
       "typedi": "^0.7.1",
       "typeorm": "0.1.14",
       "typeorm-typedi-extensions": "^0.1.1",
-      "typescript": "2.5.2"
+      "typescript": "2.5.2",
+      "gts": "^0.5.4",
+      "jest": "^22.4.2",
+      "nodemon": "^1.17.1",
+      "supertest": "^3.0.0",
+      "ts-jest": "^22.4.1",
+      "ts-node": "3.3.0",
+      "tslint": "^5.9.1"
    }
 }
