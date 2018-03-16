@@ -1,6 +1,9 @@
 version: 2
 jobs:
   test:
+    machine:
+      node:
+        version: 8.6.0
     steps:
       - checkout
       - run: npm run test
