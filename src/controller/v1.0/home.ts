@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response, Router} from 'express';
+import {Service} from 'typedi';
 
 import {BaseController} from '../base';
-import { Service } from 'typedi';
 
 @Service()
 export class HomeController extends BaseController {

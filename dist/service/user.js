@@ -13,8 +13,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var typedi_1 = require("typedi");
-var user_1 = require("./../database/repository/user");
 var typeorm_typedi_extensions_1 = require("typeorm-typedi-extensions");
+var user_1 = require("./../database/repository/user");
 var UserService = /** @class */ (function () {
     function UserService(userRepository) {
         this.userRepository = userRepository;

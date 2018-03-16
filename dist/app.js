@@ -34,45 +34,73 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 require("es6-shim");
-var typedi_1 = require("typedi");
-var typeorm_1 = require("typeorm");
 var express = require("express");
 var http = require("http");
 var configuration_1 = require("./configuration");
 var controller = require("./controller");
 var middleware = require("./middleware");
-var path = require("path");
-var databaseConfig = configuration_1.CONFIG.database;
-var entitiesPath = path.resolve(__dirname, 'database/entity/**/*');
-var options = {
-    type: "mysql",
-    host: databaseConfig.host,
-    username: databaseConfig.username,
-    password: databaseConfig.password,
-    database: databaseConfig.database,
-    entities: [entitiesPath]
-};
-typeorm_1.useContainer(typedi_1.Container);
-var app = typeorm_1.createConnection(options)
-    .then(function (connection) { return __awaiter(_this, void 0, void 0, function () {
-    var app, apiPort, environment, application;
-    return __generator(this, function (_a) {
-        console.log("Connection created!!!!!!!!!!");
-        app = express();
-        apiPort = configuration_1.CONFIG.apiPort, environment = configuration_1.CONFIG.environment, application = configuration_1.CONFIG.application;
+var App = /** @class */ (function () {
+    function App(connection) {
+        this.connection = connection;
+    }
+    App.prototype.getApp = function () {
+        var app = express();
+        var apiPort = configuration_1.CONFIG.apiPort, environment = configuration_1.CONFIG.environment, application = configuration_1.CONFIG.application;
         http.globalAgent.maxSockets = Infinity;
         middleware.configure(app);
         controller.configure(app);
         app.use(middleware.configureNotFound);
         app.use(middleware.configureError);
-        return [2 /*return*/, app];
-    });
-}); }).catch(function (error) { return console.error('Application is crashed: ' + error); });
-// module.exports = app;
-// tslint:disable-next-line:no-default-export
-exports.default = app;
+        return app;
+    };
+    App.prototype.start = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var apiPort, environment, application, app;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        apiPort = configuration_1.CONFIG.apiPort, environment = configuration_1.CONFIG.environment, application = configuration_1.CONFIG.application;
+                        app = this.getApp();
+                        return [4 /*yield*/, app
+                                .listen(apiPort, function () { return __awaiter(_this, void 0, void 0, function () {
+                                return __generator(this, function (_a) {
+                                    console.log('********************************************************');
+                                    console.log("* [" + application + "] application [" + environment + "] started at port " + apiPort + " *");
+                                    console.log('********************************************************');
+                                    return [2 /*return*/];
+                                });
+                            }); })
+                                .on('error', function (error, port) {
+                                if (error.syscall !== 'listen') {
+                                    throw error;
+                                }
+                                switch (error.code) {
+                                    case 'EACCESS':
+                                        if (process.env.NODE_ENV !== 'test') {
+                                            console.log(port + " requires elevated privileges");
+                                        }
+                                        process.exit(1);
+                                    case 'EADDRINUSE':
+                                        if (process.env.NODE_ENV !== 'test') {
+                                            console.log(port + " is already in use");
+                                        }
+                                        process.exit(1);
+                                    default:
+                                        throw error;
+                                }
+                            })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return App;
+}());
+exports.App = App;
 //# sourceMappingURL=app.js.map

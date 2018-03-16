@@ -10,8 +10,6 @@ export class UserController extends BaseController {
   }
   private getAll = async(
       _req: Request, res: Response, _next: NextFunction): Promise<void> => {
-    // const userRepository =
-    // getConnection().getCustomRepository(UserRepository);
     const data = await this.userService.getAll();
     this.setCacheControl(res, 5 * 60);
     res.json({data});

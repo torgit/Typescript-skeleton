@@ -38,49 +38,37 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var cluster = require("cluster");
 var os = require("os");
+var path = require("path");
+var Container_1 = require("typedi/Container");
+var typeorm_1 = require("typeorm");
 var app_1 = require("./app");
 var configuration_1 = require("./configuration");
 var environment_1 = require("./configuration/environment");
 var apiPort = configuration_1.CONFIG.apiPort, environment = configuration_1.CONFIG.environment, application = configuration_1.CONFIG.application;
+var databaseConfig = configuration_1.CONFIG.database;
+var entitiesPath = path.resolve(__dirname, 'database/entity/**/*');
+var options = {
+    type: 'mysql',
+    host: databaseConfig.host,
+    username: databaseConfig.username,
+    password: databaseConfig.password,
+    database: databaseConfig.database,
+    entities: [entitiesPath]
+};
 var start = function () { return __awaiter(_this, void 0, void 0, function () {
-    var _this = this;
+    var connection;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, app_1.default.then(function (app) { return app.listen(apiPort, function () { return __awaiter(_this, void 0, void 0, function () {
-                    return __generator(this, function (_a) {
-                        console.log('********************************************************');
-                        console.log("* [" + application + "] application [" + environment + "] started at port " + apiPort + " *");
-                        console.log('********************************************************');
-                        return [2 /*return*/];
-                    });
-                }); }).on('error', 
-                // tslint:disable-next-line:no-any
-                function (error, port) {
-                    if (error.syscall !== 'listen') {
-                        throw error;
-                    }
-                    switch (error.code) {
-                        case 'EACCESS':
-                            if (process.env.NODE_ENV !== 'test') {
-                                console.log(port + " requires elevated privileges");
-                            }
-                            process.exit(1);
-                        case 'EADDRINUSE':
-                            if (process.env.NODE_ENV !== 'test') {
-                                console.log(port + " is already in use");
-                            }
-                            process.exit(1);
-                        default:
-                            throw error;
-                    }
-                }).timeout = 10000; })];
+            case 0:
+                typeorm_1.useContainer(Container_1.Container);
+                return [4 /*yield*/, typeorm_1.createConnection(options)];
             case 1:
-                _a.sent();
-                return [2 /*return*/];
+                connection = _a.sent();
+                return [4 /*yield*/, new app_1.App(connection).start()];
+            case 2: return [2 /*return*/, _a.sent()];
         }
     });
 }); };
-// const start = () => require('./app');
 if (environment === environment_1.DEVELOPMENT) {
     start();
 }

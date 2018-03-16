@@ -1,47 +1,31 @@
 import * as cluster from 'cluster';
 import {Worker} from 'cluster';
 import * as os from 'os';
-import app from './app';
+import * as path from 'path';
+import {Container} from 'typedi/Container';
+import {ConnectionOptions, createConnection, useContainer} from 'typeorm';
+
+import {App} from './app';
 import {CONFIG} from './configuration';
 import {DEVELOPMENT} from './configuration/environment';
 
 const {apiPort, environment, application} = CONFIG;
-
-const start = async () => {
-  await app.then(app => app.listen(
-    apiPort,
-    async () => {
-      console.log(
-          '********************************************************');
-      console.log(`* [${application}] application [${
-          environment}] started at port ${apiPort} *`);
-      console.log(
-          '********************************************************');
-    }).on('error',
-    // tslint:disable-next-line:no-any
-    (error: any, port: number) => {
-      if (error.syscall !== 'listen') {
-        throw error;
-      }
-      switch (error.code) {
-        case 'EACCESS':
-          if (process.env.NODE_ENV !== 'test') {
-            console.log(`${port} requires elevated privileges`);
-          }
-          process.exit(1);
-        case 'EADDRINUSE':
-          if (process.env.NODE_ENV !== 'test') {
-            console.log(`${port} is already in use`);
-          }
-          process.exit(1);
-        default:
-          throw error;
-      }
-    }).timeout = 10000
-  );
+const databaseConfig = CONFIG.database;
+const entitiesPath = path.resolve(__dirname, 'database/entity/**/*');
+const options: ConnectionOptions = {
+  type: 'mysql',
+  host: databaseConfig.host,
+  username: databaseConfig.username,
+  password: databaseConfig.password,
+  database: databaseConfig.database,
+  entities: [entitiesPath]
 };
 
-// const start = () => require('./app');
+const start = async () => {
+  useContainer(Container);
+  const connection = await createConnection(options);
+  return await new App(connection).start();
+};
 
 if (environment === DEVELOPMENT) {
   start();

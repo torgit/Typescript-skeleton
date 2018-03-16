@@ -17,8 +17,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
-var base_1 = require("../base");
 var typedi_1 = require("typedi");
+var base_1 = require("../base");
 var HomeController = /** @class */ (function (_super) {
     __extends(HomeController, _super);
     function HomeController() {

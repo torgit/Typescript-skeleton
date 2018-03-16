@@ -29,8 +29,7 @@ var UserRepository = /** @class */ (function (_super) {
         return _this;
     }
     UserRepository = __decorate([
-        typedi_1.Service(),
-        typeorm_1.EntityRepository(user_1.User)
+        typedi_1.Service(), typeorm_1.EntityRepository(user_1.User)
     ], UserRepository);
     return UserRepository;
 }(typeorm_1.Repository));
