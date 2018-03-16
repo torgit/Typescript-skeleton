@@ -1,3 +1,11 @@
-machine:
-  node:
-    version: 8.6.0
+version: 2
+jobs:
+  test:
+    steps:
+      - checkout
+      - run: npm run test
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
