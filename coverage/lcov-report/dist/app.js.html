@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dist/app.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">dist</a> app.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>50/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.55% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>27/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.39% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/51</span>
+      </div>
+    </div>
+    <p class="quiet">
+      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+    </p>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __awaiter = (this &amp;&amp; this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function <span class="fstat-no" title="function not covered" >fulfilled(</span>value) { <span class="cstat-no" title="statement not covered" >try { <span class="cstat-no" title="statement not covered" >step(generator.next(value)); </span>} catch (e) { <span class="cstat-no" title="statement not covered" >reject(e); </span>} </span>}
+        function <span class="fstat-no" title="function not covered" >rejected(</span>value) { <span class="cstat-no" title="statement not covered" >try { <span class="cstat-no" title="statement not covered" >step(generator["throw"](value)); </span>} catch (e) { <span class="cstat-no" title="statement not covered" >reject(e); </span>} </span>}
+        function step(result) { result.done ? resolve(result.value) : <span class="branch-1 cbranch-no" title="branch not covered" >new P(<span class="fstat-no" title="function not covered" >fu</span>nction (resolve) { <span class="cstat-no" title="statement not covered" >resolve(result.value); </span>}).then(fulfilled, rejected);</span> }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this &amp;&amp; this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: <span class="fstat-no" title="function not covered" >fu</span>nction() { <span class="cstat-no" title="statement not covered" >if (t[0] &amp; 1) <span class="cstat-no" title="statement not covered" >throw t[1]; <span class="cstat-no" title="statement not covered" ></span></span>return t[1]; </span>}, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" &amp;&amp; (g[Symbol.iterator] = <span class="fstat-no" title="function not covered" >fu</span>nction() { <span class="cstat-no" title="statement not covered" >return this; </span>}), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (f) <span class="cstat-no" title="statement not covered" >throw new TypeError("Generator is already executing.");</span>
+        while (_) try {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (f = 1, y &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >t = y[op[0] &amp; 2 ? "return" : op[0] ? "throw" : "next"])</span> &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >!(t = t.call(y, op[1])).done)</span> <span class="cstat-no" title="statement not covered" >return t;</span>
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (y = 0, t) <span class="cstat-no" title="statement not covered" >op = [0, t.value];</span>
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+<span class="branch-2 cbranch-no" title="branch not covered" >                case 4: <span class="cstat-no" title="statement not covered" >_.label++; <span class="cstat-no" title="statement not covered" ></span>return { value: op[1], done: false };</span></span>
+<span class="branch-3 cbranch-no" title="branch not covered" >                case 5: <span class="cstat-no" title="statement not covered" >_.label++; <span class="cstat-no" title="statement not covered" ></span>y = op[1]; <span class="cstat-no" title="statement not covered" ></span>op = [0]; <span class="cstat-no" title="statement not covered" ></span>continue;</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered" >                case 7: <span class="cstat-no" title="statement not covered" >op = _.ops.pop(); <span class="cstat-no" title="statement not covered" ></span>_.trys.pop(); <span class="cstat-no" title="statement not covered" ></span>continue;</span></span>
+                default:
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (!(t = _.trys, t = t.length &gt; 0 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >t[t.length - 1])</span> &amp;&amp; (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+<span class="cstat-no" title="statement not covered" >                    if (op[0] === 3 &amp;&amp; (!t || (op[1] &gt; t[0] &amp;&amp; op[1] &lt; t[3]))) { <span class="cstat-no" title="statement not covered" >_.label = op[1]; <span class="cstat-no" title="statement not covered" ></span>break; </span>}</span>
+<span class="cstat-no" title="statement not covered" >                    if (op[0] === 6 &amp;&amp; _.label &lt; t[1]) { <span class="cstat-no" title="statement not covered" >_.label = t[1]; <span class="cstat-no" title="statement not covered" ></span>t = op; <span class="cstat-no" title="statement not covered" ></span>break; </span>}</span>
+<span class="cstat-no" title="statement not covered" >                    if (t &amp;&amp; _.label &lt; t[2]) { <span class="cstat-no" title="statement not covered" >_.label = t[2]; <span class="cstat-no" title="statement not covered" ></span>_.ops.push(op); <span class="cstat-no" title="statement not covered" ></span>break; </span>}</span>
+<span class="cstat-no" title="statement not covered" >                    if (t[2]) <span class="cstat-no" title="statement not covered" >_.ops.pop();</span></span>
+<span class="cstat-no" title="statement not covered" >                    _.trys.pop(); <span class="cstat-no" title="statement not covered" ></span>continue;</span>
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { <span class="cstat-no" title="statement not covered" >op = [6, e]; <span class="cstat-no" title="statement not covered" ></span>y = 0; </span>} finally { f = t = 0; }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (op[0] &amp; 5) <span class="cstat-no" title="statement not covered" >throw op[1]; </span>return { value: op[0] ? op[1] : <span class="branch-1 cbranch-no" title="branch not covered" >void 0,</span> done: true };
+    }
+};
+var _this = this;
+Object.defineProperty(exports, "__esModule", { value: true });
+require("reflect-metadata");
+var express = require("express");
+var http = require("http");
+var configuration_1 = require("./configuration");
+var controller = require("./controller");
+var middleware = require("./middleware");
+var app = express();
+var apiPort = configuration_1.CONFIG.apiPort, environment = configuration_1.CONFIG.environment, application = configuration_1.CONFIG.application;
+http.globalAgent.maxSockets = Infinity;
+middleware.configure(app);
+controller.configure(app);
+app.use(middleware.configureNotFound);
+app.use(middleware.configureError);
+var server = app.listen(apiPort, function () { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        console.log('********************************************************');
+        console.log("* [" + application + "] application [" + environment + "] started at port " + apiPort + " *");
+        console.log('********************************************************');
+        return [2 /*return*/];
+    });
+}); });
+server.timeout = 10000;
+module.exports = server;
+//# sourceMappingURL=app.js.map</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 13 2018 10:55:25 GMT+0700 (+07)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+<script src="../block-navigation.js"></script>
+</body>
+</html>
