@@ -1,5 +1,5 @@
 {
-   "name": "superscores-ts",
+   "name": "Typescript-Skeleton",
    "version": "1.0.0",
    "description": "",
    "main": "dist/server.js",
@@ -8,6 +8,7 @@
       "check": "gts check",
       "clean": "gts clean",
       "compile": "tsc -p .",
+      "build": "tsc -p .",
       "serve": "ts-node src/server.ts",
       "start": "npm run clean && npm run compile && node dist/server.js",
       "fix": "gts fix",
